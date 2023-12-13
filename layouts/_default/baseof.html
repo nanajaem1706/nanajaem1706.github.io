@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    {{/* CSS */}}
+    {{ with resources.Get "sass/main.scss" }}
+      {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
+      {{ with . | toCSS $opts }}
+        {{ if hugo.IsDevelopment }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ else }}
+          {{ with . | minify | fingerprint }}
+            <link
+              rel="stylesheet"
+              href="{{ .RelPermalink }}"
+              integrity="{{ .Data.Integrity }}"
+              crossorigin="anonymous"
+            />
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Font */}}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {{ partial "header" . }}
+    <main>
+      <div class="banner">
+        <div class="banner_container">
+          <div class="banner_container-news">
+            {{ .Site.Params.News }}
+          </div>
+        </div>
+      </div>
+
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer" . }}
+  </body>
+
+  {{/* Javascript */}}
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+    document.addEventListener("DOMContentLoaded", () => {
+      const profilDropdownBtn = document.getElementById("profilBtn");
+      const profilDropdownMenu = document.getElementById("profilMenu");
+
+      profilDropdownBtn.addEventListener("click", () => {
+        profilDropdownMenu.classList.toggle("hidden");
+      });
+
+      const lainnyaDropdownBtn = document.getElementById("lainnyaBtn");
+      const lainnyaDropdownMenu = document.getElementById("lainnyaMenu");
+
+      lainnyaDropdownBtn.addEventListener("click", () => {
+        lainnyaDropdownMenu.classList.toggle("hidden");
+      });
+    });
+  </script>
+</html>

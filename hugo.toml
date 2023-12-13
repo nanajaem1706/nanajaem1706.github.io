@@ -1,0 +1,5 @@
+baseURL = 'https://nanajaem1706.github.io/smpit-nururrahman'
+languageCode = 'id-ID'
+title = 'SMPIT Nururrahman'
+[params]
+    News = 'Team IT NR Masih bekerja Keras Terus berinovasi untuk menunjang Proses belajar mengajar di SMPIT Nururrahman, Nantikan Segera Launching Perpustakaan Digital .....'

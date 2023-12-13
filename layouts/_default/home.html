@@ -1,0 +1,113 @@
+{{ define "main" }}
+  <div class="home">
+    {{ partial "slider" . }}
+    <div class="container section1">
+      <div class="left">
+        <div class="bg"></div>
+        <img src="/images/kepala-sekolah.png" alt="kepala sekolah" />
+      </div>
+      <div class="right">
+        <h1>sambutan kepala sekolah</h1>
+        <p>{{ .Params.sambutan_kepala_sekolah }}</p>
+      </div>
+    </div>
+
+    <div class="section2">
+      <div class="container">
+        <h1>Agenda Terbaru</h1>
+        <p>Tidak ada agenda baru dalam waktu dekat ini</p>
+      </div>
+    </div>
+
+    <div class="container section3">
+      <h1>Berita Terbaru</h1>
+    </div>
+
+    <div class="section4">
+      <div class="container">
+        <h1>Kata Bijak Motivasi</h1>
+        <p>
+          Kita adalah makhluk yang suka menyalahkan dari luar, tidak menyadari
+          bahwa masalah biasanya dari dalam
+        </p>
+
+        <span>- Hidayatullah, M.Pd.I</span>
+      </div>
+    </div>
+
+    <div class="section5">
+      <h1>Konten Youtube Terbaru</h1>
+      <div class="section5_container">
+        <div>
+          <iframe
+            class="latestVideoEmbed"
+            vnum="0"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            class="latestVideoEmbed"
+            vnum="1"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            class="latestVideoEmbed"
+            vnum="2"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            class="latestVideoEmbed"
+            vnum="3"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            class="latestVideoEmbed"
+            vnum="4"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // embed youtube videos
+    const loadVideo = (iframe) => {
+      const cid = "UCCpngLtYZXlKSOSf2qQBByg";
+      const channelURL = encodeURIComponent(
+        `https://www.youtube.com/feeds/videos.xml?channel_id=${cid}`,
+      );
+      const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
+      fetch(reqURL)
+        .then((response) => response.json())
+        .then((result) => {
+          const videoNumber = iframe.getAttribute("vnum");
+          const link = result.items[videoNumber].link;
+          const id = link.substring(link.indexOf("=") + 1);
+          iframe.setAttribute(
+            "src",
+            `https://youtube.com/embed/${id}?controls=0&autoplay=1`,
+          );
+        })
+        .catch((error) => console.log("error", error));
+    };
+
+    const iframes = document.getElementsByClassName("latestVideoEmbed");
+
+    for (let i = 0, len = iframes.length; i < len; i++) {
+      loadVideo(iframes[i]);
+    }
+  </script>
+{{ end }}

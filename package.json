@@ -1,0 +1,16 @@
+{
+  "name": "smpit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "hugo server -D"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}

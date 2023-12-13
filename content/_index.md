@@ -1,0 +1,3 @@
+---
+sambutan_kepala_sekolah: "Selamat datang kepada semua pengunjung yang menghampiri halaman situs web SMPIT Nururrahman. Di sini, kami bukan hanya sekadar sekolah, tetapi sebuah wadah di mana potensi tumbuh, ilmu berkembang, dan nilai-nilai tercermin dalam setiap langkah. Kami bangga menjadi bagian dari perjalanan pendidikan setiap anak, membimbing mereka menuju kesuksesan masa depan. Di SMPIT Nururrahman, kami percaya bahwa pendidikan tidak hanya tentang penguasaan kurikulum, tetapi juga tentang membentuk karakter yang kuat dan berempati. Melalui pendekatan holistik, kami mengembangkan potensi intelektual, sosial, dan spiritual siswa."
+---
