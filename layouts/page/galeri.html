@@ -3,5 +3,23 @@
 {{ define "main" }}
   <div class="galeri container">
     <h1>{{ .Params.page_title }}</h1>
+
+    <div class="list">
+      {{ range .Params.list_foto }}
+        <div class="list_item">
+          <img src="{{ . }}" />
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="control">
+      <button>
+        <i data-lucide="chevron-left" class="icon"></i>
+      </button>
+      <div class="current_page">1</div>
+      <button>
+        <i data-lucide="chevron-right" class="icon"></i>
+      </button>
+    </div>
   </div>
 {{ end }}
