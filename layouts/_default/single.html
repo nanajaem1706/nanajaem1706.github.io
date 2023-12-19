@@ -1,0 +1,29 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+  <div class="container article">
+    <h1 class="title">{{ .Title }}</h1>
+
+    <div class="subtitle">
+      <time>{{ dateFormat .Site.Params.dateFormat .Date }} |</time>
+      {{ range (.GetTerms "authors") }}
+        <a href="{{ .Permalink }}" class="author">{{ .Name }}</a>
+      {{ end }}
+    </div>
+
+    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ if .Params.Images }}
+      <div class="image_list">
+        {{ range .Params.Images }}
+          <img src="{{ . }}" alt="{{ . }}" />
+        {{ end }}
+      </div>
+      <hr />
+    {{ end }}
+  </div>
+{{ end }}

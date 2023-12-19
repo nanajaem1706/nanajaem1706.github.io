@@ -424,7 +424,138 @@ main {
 }
 
 .berita {
-  padding-block: 40px;
+  padding-block: 64px;
+}
+.berita .categories {
+  display: flex;
+  margin-bottom: 56px;
+  justify-content: center;
+  gap: 8px;
+}
+.berita .categories_item {
+  padding: 10px 12px;
+  background-color: #003355;
+  color: white;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.berita .categories_item small {
+  color: #003355;
+  border-radius: 100%;
+  background-color: #ffcc33;
+  margin-left: 4px;
+  padding: 4px 8px;
+}
+.berita .list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+.berita .list_item {
+  flex: 1;
+  position: relative;
+}
+.berita .list_item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.berita .list_item .content {
+  padding-top: 12px;
+}
+.berita .list_item .content .title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 4px;
+}
+.berita .list_item .content div {
+  display: flex;
+  font-size: 12px;
+  color: #222222;
+  margin-bottom: 8px;
+}
+.berita .list_item .content div time {
+  margin-left: 8px;
+}
+.berita .list_item .content .categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  padding: 8px;
+}
+.berita .list_item .content .categories .badge {
+  background-color: #003355;
+  color: #fff;
+  padding-inline: 8px;
+  padding-block: 4px;
+  font-size: 10px;
+}
+.berita .list_item .content .description {
+  text-align: justify;
+}
+.berita .pagination {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.berita .pagination .page-item {
+  list-style: none;
+}
+.berita .pagination .page-item .page-link {
+  color: white;
+  background-color: #003355;
+  font-size: 12px;
+  min-width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding-inline: 8px;
+  border-radius: 4px;
+}
+.berita .pagination .disabled .page-link {
+  color: white;
+  background-color: #959595;
+}
+.berita .pagination .active .page-link {
+  font-weight: bold;
+  color: #003355;
+  background-color: #ffcc33;
+}
+
+.article {
+  width: 75%;
+  margin-inline: auto;
+  padding-block: 64px;
+}
+.article .title {
+  margin-bottom: 8px;
+}
+.article .subtitle {
+  color: #959595;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.article .subtitle a {
+  color: #959595;
+}
+.article img {
+  margin-bottom: 24px;
+  width: 100%;
+}
+.article .content {
+  margin-bottom: 24px;
+}
+.article .image_list {
+  display: flex;
+  gap: 12px;
+}
+.article hr {
+  border: 4px solid #003355;
 }
 
 .guru {

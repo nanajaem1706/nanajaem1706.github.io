@@ -1,0 +1,45 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+  <div class="container berita">
+    <div class="categories">
+      {{ range $.Site.Taxonomies.categories.ByCount }}
+        <a href="/categories/{{ .Name }}" class="categories_item">
+          {{ .Name }} <small>{{ .Count }}</small>
+        </a>
+      {{ end }}
+    </div>
+
+    <div class="list">
+      {{ range .Paginator.Pages }}
+        <div class="list_item">
+          <a href="{{ .Permalink }}">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+            <div class="content">
+              <p class="title">{{ .Title }}</p>
+              <div>
+                {{ range (.GetTerms "authors") }}
+                  <a href="{{ .Permalink }}" class="author">{{ .Name }}</a>
+                {{ end }}
+                <time>| {{ dateFormat .Site.Params.dateFormat .Date }}</time>
+              </div>
+
+              <div class="categories">
+                {{ range (.GetTerms "categories") }}
+                  <a href="{{ .Permalink }}" class="badge"
+                    >{{ .Name }}
+                  </a>
+                {{ end }}
+              </div>
+
+              <div class="description">
+                {{ .Params.description }}
+              </div>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+{{ end }}

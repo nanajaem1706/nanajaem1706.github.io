@@ -1,5 +1,12 @@
 baseURL = 'https://nanajaem1706.github.io'
 languageCode = 'id-ID'
 title = 'SMPIT Nururrahman'
+paginate = 4
+
 [params]
+    dateFormat = '2 January, 2006'
     News = 'Team IT NR Masih bekerja Keras Terus berinovasi untuk menunjang Proses belajar mengajar di SMPIT Nururrahman, Nantikan Segera Launching Perpustakaan Digital .....'
+
+[taxonomies]
+    category = 'categories'
+    author = 'authors'
