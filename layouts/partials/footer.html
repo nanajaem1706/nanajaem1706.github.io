@@ -43,8 +43,48 @@
     </div>
 
     <div class="content">
-      <h1 class="title">agenda</h1>
-      <h1 class="title">berita</h1>
+      <div class="content_agenda">
+        <h1 class="title">agenda</h1>
+        <div class="list">
+          {{ range ( where .Site.RegularPages "Type" "berita" | first 2 ) }}
+            <li class="item">
+              <div class="left">
+                <time class="day">{{ dateFormat .Site.Params.day .Date }}</time>
+                <time class="month_year">
+                  {{ dateFormat .Site.Params.monthYear .Date }}
+                </time>
+              </div>
+              <div class="right">
+                <div>
+                  <time>{{ .Date | time.Format ":time_short" }}</time>
+                </div>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </div>
+            </li>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="content_berita">
+        <h1 class="title">berita</h1>
+        <div class="list">
+          {{ range ( where .Site.RegularPages "Type" "berita" | first 2 ) }}
+            <li class="item">
+              <div class="left">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <div>
+                  <time
+                    >{{ dateFormat .Site.Params.shortDateFormat .Date }}</time
+                  >
+                </div>
+              </div>
+              <div class="right">
+                <img src="{{ .Params.Image }}" alt="{{ .Params.Title }}" />
+              </div>
+            </li>
+          {{ end }}
+        </div>
+      </div>
     </div>
 
     <div class="maps">

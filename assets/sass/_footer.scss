@@ -88,6 +88,125 @@
 
     .content {
       flex: 1;
+      display: grid;
+      gap: 8px;
+
+      &_agenda {
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 80%;
+          list-style: none;
+
+          .item {
+            display: flex;
+            background: rgba(255, 204, 51, 0.8);
+
+            .left {
+              width: 63px;
+              height: 63px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background-color: white;
+              color: #003355;
+              font-weight: 600;
+
+              .day {
+                font-size: 24px;
+              }
+
+              .month_year {
+                font-size: 10px;
+              }
+            }
+
+            .right {
+              padding: 8px;
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              div {
+                background-color: white;
+                color: #003355;
+                width: fit-content;
+                padding: 2px 18px;
+                display: flex;
+                border-radius: 100px 0px;
+
+                time {
+                  font-size: 10px;
+                  font-weight: 600;
+                }
+              }
+
+              a {
+                color: white;
+                font-size: 12px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+
+      &_berita {
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 80%;
+          list-style: none;
+
+          .item {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 204, 51, 0.8);
+
+            .left {
+              margin-left: auto;
+              padding: 8px 12px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: end;
+
+              a {
+                font-size: 12px;
+                font-weight: bold;
+                color: white;
+              }
+
+              div {
+                background: rgba(255, 204, 51, 0.8);
+                display: flex;
+                padding: 2px 4px;
+                background-color: white;
+                color: #003355;
+
+                time {
+                  font-size: 10px;
+                  font-weight: 500;
+                }
+              }
+            }
+
+            .right {
+              background-color: white;
+              padding: 8px;
+
+              img {
+                width: 48px;
+                height: 48px;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
     }
 
     .maps {

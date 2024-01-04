@@ -20,7 +20,21 @@
     </div>
 
     <div class="container section3">
-      <h1>Berita Terbaru</h1>
+      <h1 class="title">berita</h1>
+      <div class="list">
+        {{ range ( where .Site.RegularPages "Type" "berita" | first 2 ) }}
+          <li class="item">
+            <div class="left">
+              <img src="{{ .Params.Image }}" alt="{{ .Params.Title }}" />
+            </div>
+            <div class="right">
+              <a class="title" href="{{ .Permalink }}">{{ .Title }}</a>
+              <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+              <p>{{ .Params.Description }}</p>
+            </div>
+          </li>
+        {{ end }}
+      </div>
     </div>
 
     <div class="section4">
