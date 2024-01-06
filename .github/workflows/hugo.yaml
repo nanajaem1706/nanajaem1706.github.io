@@ -61,7 +61,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}" \
             && npx pagefind --site public --output-path=static/js/pagefind \
-            && cp -r static/js public"
+            && cp -r static/js public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
