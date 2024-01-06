@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
@@ -31,6 +31,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    {{/* <link href="/js/pagefind/pagefind-ui.css" rel="stylesheet" /> */}}
+    <script src="/js/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </head>
   <body>
     {{ partial "header" . }}
@@ -53,6 +56,19 @@
   <script>
     lucide.createIcons();
     document.addEventListener("DOMContentLoaded", () => {
+      new PagefindUI({
+        baseUrl: "/",
+        element: "#search",
+        showImages: false,
+        resetStyles: true,
+        showSubResults: false,
+      });
+
+      const dateTag = document.querySelectorAll(".pagefind-ui__result-tag");
+      dateTag.forEach(function (li) {
+        li.innerHTML = li.innerHTML.replace("Date: ", "");
+      });
+
       const profilDropdownBtn = document.getElementById("profilBtn");
       const profilDropdownMenu = document.getElementById("profilMenu");
 

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="home">
+  <div class="home" data-pagefind-ignore="all">
     {{ partial "slider" . }}
     <div class="container section1">
       <div class="left">
@@ -112,7 +112,7 @@
           const id = link.substring(link.indexOf("=") + 1);
           iframe.setAttribute(
             "src",
-            `https://youtube.com/embed/${id}?controls=0&autoplay=1`,
+            `https://youtube.com/embed/${id}?controls=0&autoplay=0`,
           );
         })
         .catch((error) => console.log("error", error));

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "hugo server -D"
+    "start": "hugo server -D",
+    "pagefind": "npx pagefind --site public --output-path=static/js/pagefind"
   },
   "keywords": [],
   "author": "",

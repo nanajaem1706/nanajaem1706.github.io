@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" data-pagefind-ignore="all">
   <div class="header_container">
     <div class="left">
       <a href="/">
@@ -8,15 +8,15 @@
     </div>
 
     <div class="search">
-      <input type="text" class="search_input" />
-      {{/* <select name="category" class="search_category">
-        <option value="all">All</option>
-        </select>
-      */}}
-      <button class="search_btn">
+      <div id="search"></div>
+      <button class="search_btn" onclick="search">
         <i class="icon" data-lucide="search"></i>
       </button>
     </div>
+    {{/* <select name="category" class="search_category">
+      <option value="all">All</option>
+      </select>
+    */}}
   </div>
   <div class="header_contact">
     <a href="mailto:smpitnururrahman@gmail.com">

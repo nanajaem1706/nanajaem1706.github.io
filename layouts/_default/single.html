@@ -1,8 +1,8 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-  <div class="container article">
-    <h1 class="title">{{ .Title }}</h1>
+  <div class="container article" data-pagefind-body>
+    <h1 class="title" data-pagefind-meta="title">{{ .Title }}</h1>
 
     <div class="subtitle">
       <time>{{ dateFormat .Site.Params.dateFormat .Date }} |</time>

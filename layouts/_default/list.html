@@ -1,7 +1,7 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-  <div class="container berita">
+  <div class="container berita" data-pagefind-ignore="all">
     <div class="categories">
       {{ range $.Site.Taxonomies.categories.ByCount }}
         <a href="/categories/{{ .Name }}" class="categories_item">
